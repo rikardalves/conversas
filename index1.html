@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Login</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff4b4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Por favor, faça o login</h2>
+        <form action="#" method="post" onsubmit="return validarLogin()">
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+
+    <script>
+        function validarLogin() {
+            var usuario = document.getElementById("usuario").value;
+            var senha = document.getElementById("senha").value;
+
+            // Verifica os usuários e senhas permitidos
+            if (usuario === "Ríkard" && senha === "123456") {
+                window.location.href = "page2.html"; // Redireciona Ríkard para page2.html
+                return false; // Impede a submissão do formulário
+            } else if (usuario === "Marcos" && senha === "654321") {
+                window.location.href = "page3.html"; // Redireciona Marcos para page3.html
+                return false; // Impede a submissão do formulário
+            } else {
+                alert("Usuário ou senha incorretos. Tente novamente.");
+                return false; // Impede a submissão do formulário
+            }
+        }
+    </script>
+</body>
+</html>
